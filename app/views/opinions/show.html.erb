@@ -1,0 +1,9 @@
+<h1>opinions#show</h1>
+<h2><%= @current_topic.topic %>に対する意見一覧</h2>
+<% if @opinions %>
+<% @opinions.each do |opinion| %>
+<%= opinion.opinion%>
+<% end %>
+<% end %>
+<h2>新しい意見を作成する</h2>
+<%= link_to("意見作成","/opinions/#{@current_topic.id}/new") %> 

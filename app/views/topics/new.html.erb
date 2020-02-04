@@ -1,0 +1,9 @@
+<h2><%= @current_room.name %>のTopic作成</h2>
+<% @topic.errors.full_messages.each do |message|%>
+<%= message%>
+<% end %>
+<%= form_tag("/topics/:room_id/create") do %>
+topic
+<input name="topic">
+<input type="submit" value="作成">
+<% end %>

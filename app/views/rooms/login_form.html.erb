@@ -1,0 +1,10 @@
+<h2>会議室に入室する</h2>
+<%= form_tag("/rooms/login") do %>
+name
+<input name="name">
+password
+<input name="password" type="password">
+<input type="submit" value="入室">
+<% end %>
+<h2>会議室を作成する</h2>
+<%= link_to("会議室作成","/rooms/new") %>

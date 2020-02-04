@@ -1,0 +1,9 @@
+<h2>all topics for <%= @room.name %></h2>
+<h2>すべての議題</h2>
+<% if @topics %>
+<% @topics.each do |topic| %>
+<%= link_to(topic.topic,"/opinions/#{topic.id}") %> 
+<% end %>
+<% end %>
+<h2>新しい議題を作成する</h2>
+<%= link_to("議題作成","/topics/#{@current_room.id}/new") %> 

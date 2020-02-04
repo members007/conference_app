@@ -1,0 +1,9 @@
+<h2>Opinion作成</h2>
+<% @opinion.errors.full_messages.each do |message|%>
+<%= message%>
+<% end %>
+<%= form_tag("/opinions/:topic_id/create") do %>
+opinion
+<textarea name="opinion"></textarea>
+<input type="submit" value="作成">
+<% end %>
