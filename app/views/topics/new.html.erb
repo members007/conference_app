@@ -1,9 +1,31 @@
-<h2><%= @current_room.name %>のTopic作成</h2>
-<% @topic.errors.full_messages.each do |message|%>
-<%= message%>
-<% end %>
+<!--
+<h2></h2>
 <%= form_tag("/topics/:room_id/create") do %>
 topic
 <input name="topic">
 <input type="submit" value="作成">
 <% end %>
+-->
+
+<div class= "main">
+    <div class=container>
+        <div class="form_heading"><%= @current_room.name %>のTopic作成</div>
+    <div class="form">
+        <div class="form_body">
+        <% if @topic %>
+            <% @topic.errors.full_messages.each do |message|%>
+                <%= message%>
+            <% end %>
+        <% end %>
+        <%= form_tag("/topics/:room_id/create") do %>
+        <p>
+        topic
+        <input name="topic">
+        </p>
+        </div>
+        <input type="submit" value="作成" class="login_btn">  
+        <% end %>
+        
+    </div>
+    </div>
+</div>

@@ -1,4 +1,7 @@
 class RoomsController < ApplicationController
+  def top
+  end
+  
   def index
     @rooms = Room.all
   end
@@ -27,6 +30,7 @@ class RoomsController < ApplicationController
       session[:room_id] = @room.id
       redirect_to("/topics/#{@room.id}")
     else 
+      @error_message = "会議室名またはpasswordが違います"
       render("rooms/login")
     end
   end

@@ -1,3 +1,39 @@
 // Place all the styles related to the topics controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.container {
+    margin: 50px 0;
+}
+
+.form {
+    margin: 0 200px;
+    padding: 20px 0;
+}
+
+.form_heading {
+    font-size: 30px;
+}
+
+.new_form_heading {
+    font-size: 30px;
+    padding-left: 170px;
+}
+
+.form_body input {
+    margin: 0 15px;
+}
+
+.login_btn {
+    margin: 0 200px;
+}
+
+.heading {
+    font-size: 30px;
+    padding-left: 170px;
+    margin: 20px 0;
+}
+
+.topics-item {
+    padding-left: 170px;
+    margin: 10px 0;
+}

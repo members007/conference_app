@@ -13,3 +13,23 @@
  *= require_tree .
  *= require_self
  */
+
+header {
+    height: 50px;
+}
+
+ul {
+    line-height: 50px;
+    width: 1000px;
+}
+
+li {
+    float: left;
+    list-style: none;
+    margin: 20px 30px;
+}
+
+span {
+    font-size: 30px;
+    font-family: "Monotype Corsiva";
+}

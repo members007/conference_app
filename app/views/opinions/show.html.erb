@@ -1,9 +1,52 @@
-<h1>opinions#show</h1>
-<h2><%= @current_topic.topic %>に対する意見一覧</h2>
+<!--
+<h1><%= @current_room.name %> - <%= @current_topic.topic %></h1>
+<h2></h2>
 <% if @opinions %>
 <% @opinions.each do |opinion| %>
 <%= opinion.opinion%>
+<%= opinion.eval %>
+<%= link_to("賛同","/likes/#{opinion.id}/create", {method: "post"})%>
+<%= link_to("反対","/unlikes/#{opinion.id}/create", {method: "post"})%>
 <% end %>
 <% end %>
-<h2>新しい意見を作成する</h2>
+<h2></h2>
 <%= link_to("意見作成","/opinions/#{@current_topic.id}/new") %> 
+-->
+<div class="main">
+    <div class="container">
+        <div class = "heading"><%= @current_topic.topic %>に対する意見一覧</div>
+        <div class="topics-index">
+        <% if @opinions %>
+        <% @opinions.each do |opinion| %>
+            <div class="topics-item">
+                <div class="content">
+                    <%= opinion.opinion%>
+                </div>
+                <div class="eval">
+                    評価    : <%= opinion.eval %>
+                </div>
+                <div class="btns">
+                <div class="btn btn-like">
+                    <%= link_to("/likes/#{opinion.id}/create", {method: "post"}) do %>
+                    <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                    <% end %>
+                </div>
+                <div class="btn btn-unlike">
+                    <%= link_to("/unlikes/#{opinion.id}/create", {method: "post"}) do %>
+                    <i class="fa fa-thumbs-o-down" aria-hidden="true"></i>
+                    <% end %>
+                </div> 
+                </div>
+            </div>
+        <% end %>
+        <% end %>
+        </div>
+
+        <div class="topics_new">
+            <div class = "heading">新しい意見を作成する</div>
+            <div class="topics-item">
+                <%= link_to("意見作成","/opinions/#{@current_topic.id}/new") %> 
+            </div>
+        </div>
+    </div>
+</div>

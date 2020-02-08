@@ -7,9 +7,36 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
 
   <body>
+    <header>
+    <div class = "header_menus">
+    <ul>
+    <li>
+      <%= link_to("/") do %>
+        <i class="fa fa-handshake-o fa-3x" aria-hidden="true"></i>
+      <% end %>
+    </li>
+    <li>
+      <a href="/"><span>conference</span>とは</a>
+    </li>
+    <li>
+      <%= link_to("会議室一覧","/rooms/index")%>
+    </li>
+
+    <li>
+      <%= link_to("会議室に入る","/rooms/login")%>
+    </li>
+
+    <li>
+            <%= link_to("新しい会議室を作る","/rooms/new") %>
+    </li>
+    </ul>
+    </div>
+    </header>
     <%= yield %>
   </body>
 </html>

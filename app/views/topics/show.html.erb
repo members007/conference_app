@@ -1,4 +1,4 @@
-<h2>all topics for <%= @room.name %></h2>
+<!--<h2>all topics for <%= @room.name %></h2>
 <h2>すべての議題</h2>
 <% if @topics %>
 <% @topics.each do |topic| %>
@@ -7,3 +7,26 @@
 <% end %>
 <h2>新しい議題を作成する</h2>
 <%= link_to("議題作成","/topics/#{@current_room.id}/new") %> 
+-->
+
+<div class="main">
+    <div class="container">
+        <div class = "heading">すべての議題</div>
+        <div class="topics-index">
+        <% if @topics %>
+        <% @topics.each do |topic| %>
+            <div class="topics-item">
+                <%= link_to(topic.topic,"/opinions/#{topic.id}") %>                 
+            </div>
+        <% end %>
+        <% end %>
+        </div>
+
+        <div class="topics_new">
+            <div class = "heading">新しい議題を作成する</div>
+            <div class="topics-item">
+                <%= link_to("議題作成","/topics/#{@current_room.id}/new") %>             
+            </div>
+        </div>
+    </div>
+</div>

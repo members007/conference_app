@@ -4,11 +4,13 @@ class OpinionsController < ApplicationController
 
   def show
     session[:topic_id] = params[:topic_id]    
-    @opinions = Opinion.where(topic_id: session[:topic_id])    
+    @current_topic = Topic.find_by(id: session[:topic_id])
+    @opinions = Opinion.where(topic_id: session[:topic_id]).order(eval: :desc)    
 
   end
 
   def new
+    @current_topic = Topic.find_by(id: session[:topic_id])
     @opinion= Opinion.new
   end
 

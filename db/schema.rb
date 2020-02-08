@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_04_043149) do
+ActiveRecord::Schema.define(version: 2020_02_04_150259) do
+
+  create_table "likes", force: :cascade do |t|
+    t.integer "opinion_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "opinions", force: :cascade do |t|
     t.text "opinion"
@@ -30,6 +36,12 @@ ActiveRecord::Schema.define(version: 2020_02_04_043149) do
   create_table "topics", force: :cascade do |t|
     t.string "topic"
     t.integer "room_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "unlikes", force: :cascade do |t|
+    t.integer "opinion_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -1,13 +1,36 @@
-<h2>会議室作成</h2>
-<% if @room %>
-<% @room.errors.full_messages.each do |message|%>
-<%= message%>
-<% end %>
-<% end %>
-<%= form_tag("/rooms/create") do %>
+<!--<h2></h2>
+<%= form_tag() do %>
 name
 <input name="name">
 password
 <input name="password" type="password">
 <input type="submit" value="作成">
 <% end %>
+-->
+<div class= "main">
+    <div class=container>
+        <div class="form_heading">会議室作成</div>
+    <div class="form">
+        <div class="form_body">
+        <% if @room %>
+            <% @room.errors.full_messages.each do |message|%>
+                <%= message%>
+            <% end %>
+        <% end %>
+
+        <%= form_tag("/rooms/create") do %>
+        <p>
+        会議室名
+        <input name="name">
+        </p>
+        <p>
+        password
+        <input name="password" type="password">
+        </p>
+        </div>
+        <input type="submit" value="作成" class="login_btn">  
+        <% end %>
+        
+    </div>
+    </div>
+</div>

@@ -1,9 +1,30 @@
-<h2>Opinion作成</h2>
-<% @opinion.errors.full_messages.each do |message|%>
-<%= message%>
-<% end %>
+<!--
+<h2></h2>
 <%= form_tag("/opinions/:topic_id/create") do %>
 opinion
 <textarea name="opinion"></textarea>
 <input type="submit" value="作成">
 <% end %>
+-->
+<div class= "main">
+    <div class=container>
+        <div class="form_heading"><%= @current_topic.topic %>のOpinion作成</div>
+    <div class="form">
+        <div class="form_body">
+        <% if @topic %>
+            <% @opinion.errors.full_messages.each do |message|%>
+                <%= message%>
+            <% end %>      
+        <% end %>
+        <%= form_tag("/opinions/:topic_id/create") do %>
+        <p>
+        opinion
+        <input name="opinion">
+        </p>
+        </div>
+        <input type="submit" value="作成" class="login_btn">  
+        <% end %>
+        
+    </div>
+    </div>
+</div>

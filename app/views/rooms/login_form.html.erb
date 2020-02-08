@@ -1,3 +1,4 @@
+<!--
 <h2>会議室に入室する</h2>
 <%= form_tag("/rooms/login") do %>
 name
@@ -8,3 +9,37 @@ password
 <% end %>
 <h2>会議室を作成する</h2>
 <%= link_to("会議室作成","/rooms/new") %>
+-->
+
+<div class= "main">
+    <div class=container>
+        <div class="form_heading">会議室に入室する</div>
+    <div class="form">
+        <div class="form_body">
+        <% if @error_message %>
+            <%= @error_message %>
+        <% end %>
+
+        <%= form_tag("/rooms/login") do %>
+        <p>
+        会議室名
+        <input name="name">
+        </p>
+        <p>
+        password
+        <input name="password" type="password">
+        </p>
+        </div>
+        <input type="submit" value="入室" class="login_btn">  
+        <% end %>
+        
+    </div>
+    <div class="new_form_heading">お探しの会議室がありませんか？</div>
+    <div class="new_form form">
+        <div class="new_form_body">
+
+        <%= link_to("会議室作成","/rooms/new") %>
+        </div>
+    </div>
+    </div>
+</div>

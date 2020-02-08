@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'unlikes/index'
+  post "unlikes/:opinion_id/create" => "unlikes#create"
+
+  get 'likes/index'
+  post "likes/:opinion_id/create" => "likes#create"
+
   get 'opinions/index'
   get "opinions/:topic_id" =>"opinions#show"
   get 'opinions/:topic_id/new' => "opinions#new"
@@ -15,5 +21,5 @@ Rails.application.routes.draw do
   get "rooms/login" => "rooms#login_form"
   post 'rooms/login' => "rooms#login"
 
-  get "/" => "rooms#login_form"
+  get "/" => "rooms#top"
 end
